@@ -7,17 +7,17 @@
     :class="sidebarToggle ? 'justify-center' : 'justify-between'"
     class="flex items-center gap-2 pt-8 sidebar-header pb-7"
   >
-    <a href="{{ url('/') }}">
+    <a href="<?php echo e(url('/')); ?>">
       <!-- Logo for Large Screens (Shows Full Logo) -->
       <span class="hidden lg:block" :class="sidebarToggle ? 'hidden' : 'block'">
-        <img class="dark:hidden w-[150px]" src="{{ asset('images/logo/logo.svg') }}" alt="Logo" />
-        <img class="hidden dark:block w-[150px]" src="{{ asset('images/logo/logo-dark.svg') }}" alt="Logo" />
+        <img class="dark:hidden w-[150px]" src="<?php echo e(asset('images/logo/logo.svg')); ?>" alt="Logo" />
+        <img class="hidden dark:block w-[150px]" src="<?php echo e(asset('images/logo/logo-dark.svg')); ?>" alt="Logo" />
       </span>
 
       <!-- Logo for Mobile View (Always Shows the Small Icon) -->
       <img
         class="block lg:hidden w-[40px]"
-        src="{{ asset('images/logo/logo-icon.svg') }}"
+        src="<?php echo e(asset('images/logo/logo-icon.svg')); ?>"
         alt="Logo"
       />
     </a>
@@ -61,7 +61,7 @@
         <!-- Menu Item Dashboard -->
         <li>
           <a
-            href="{{ url('/dashboard') }}"
+            href="<?php echo e(url('/dashboard')); ?>"
             @click="selected = (selected === 'Dashboard' ? '':'Dashboard')"
             class="menu-item group"
             :class="(selected === 'Dashboard') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -94,7 +94,7 @@
         <!-- Menu Item Clients -->
         <li>
           <a
-            href="{{ url('clients') }}"
+            href="<?php echo e(url('clients')); ?>"
             @click="selected = (selected === 'Clients' ? '':'Clients')"
             class="menu-item group"
             :class="(selected === 'Clients') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -116,7 +116,7 @@
         <!-- Menu Item Suppliers -->
         <li>
           <a
-            href="{{ url('suppliers') }}"
+            href="<?php echo e(url('suppliers')); ?>"
             @click="selected = (selected === 'Suppliers' ? '':'Suppliers')"
             class="menu-item group"
             :class="(selected === 'Suppliers') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -138,7 +138,7 @@
         <!-- Menu Item Briefs -->
         <li>
           <a
-            href="{{ url('briefs') }}"
+            href="<?php echo e(url('briefs')); ?>"
             @click="selected = (selected === 'Briefs' ? '':'Briefs')"
             class="menu-item group"
             :class="(selected === 'Briefs') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -161,7 +161,7 @@
         <!-- Menu Item Items -->
         <li>
           <a
-            href="{{ route('items.items') }}"
+            href="<?php echo e(route('items.items')); ?>"
             @click="selected = (selected === 'Items' ? '':'Items')"
             class="menu-item group"
             :class="(selected === 'Items') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -182,7 +182,7 @@
         <!-- Menu Item Items -->
         <li>
           <a
-            href="{{ url('bom') }}"
+            href="<?php echo e(url('bom')); ?>"
             @click="selected = (selected === 'BOM' ? '':'BOM')"
             class="menu-item group"
             :class="(selected === 'BOM') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -205,7 +205,7 @@
         <!-- Menu Item Calendar -->
         <li>
           <a
-            href="{{ url('calendar') }}"
+            href="<?php echo e(url('calendar')); ?>"
             @click="selected = (selected === 'Calendar' ? '':'Calendar')"
             class="menu-item group"
             :class="(selected === 'Calendar') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -239,7 +239,7 @@
         <!-- Menu Item Profile -->
         <li>
           <a
-            href="{{ url('profile') }}"
+            href="<?php echo e(url('profile')); ?>"
             @click="selected = (selected === 'Profile' ? '':'Profile')"
             class="menu-item group"
             :class="(selected === 'Profile') ? 'menu-item-active' : 'menu-item-inactive'"
@@ -332,7 +332,7 @@
               >
                 <li>
                   <a
-                    href="{{ url('form-elements') }}"
+                    href="<?php echo e(url('form-elements')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'formElements' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-in active'"
                   >
@@ -405,7 +405,7 @@
               >
                 <li>
                   <a
-                    href="{{ url('basic-tables') }}"
+                    href="<?php echo e(url('basic-tables')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'basicTables' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -479,7 +479,7 @@
               >
                 <li>
                   <a
-                    href="{{ url('blank') }}"
+                    href="<?php echo e(url('blank')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'blank' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -488,7 +488,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('dash') }}"
+                    href="<?php echo e(url('dash')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'blank' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -497,7 +497,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ 404 }}"
+                    href="<?php echo e(404); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'page404' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -602,7 +602,7 @@
               >
                 <li>
                   <a
-                    href="{{ url('line-chart') }}"
+                    href="<?php echo e(url('line-chart')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'lineChart' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -611,7 +611,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('bar-chart') }}"
+                    href="<?php echo e(url('bar-chart')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'barChart' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -685,7 +685,7 @@
               >
                 <li>
                   <a
-                    href="{{ url('alerts') }}"
+                    href="<?php echo e(url('alerts')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'alerts' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -694,7 +694,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('avatars') }}"
+                    href="<?php echo e(url('avatars')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'avatars' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -703,7 +703,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('badge') }}"
+                    href="<?php echo e(url('badge')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'badge' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -712,7 +712,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('buttons') }}"
+                    href="<?php echo e(url('buttons')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'buttons' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -721,7 +721,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('images') }}"
+                    href="<?php echo e(url('images')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'images' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -730,7 +730,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('videos') }}"
+                    href="<?php echo e(url('videos')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'videos' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -804,7 +804,7 @@
               >
                 <li>
                   <a
-                    href="{{ url('signin') }}"
+                    href="<?php echo e(url('signin')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'signin' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -813,7 +813,7 @@
                 </li>
                 <li>
                   <a
-                    href="{{ url('signup') }}"
+                    href="<?php echo e(url('signup')); ?>"
                     class="menu-dropdown-item group"
                     :class="page === 'signup' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -852,4 +852,4 @@
     </div>
     <!-- Promo Box -->
   </div>
-</aside>
+</aside><?php /**PATH C:\briefy\resources\views/partials/sidebar.blade.php ENDPATH**/ ?>

@@ -1,5 +1,5 @@
 <!-- resources/views/dashboard.blade.php -->
-@php
+<?php
     // Define a JSON string with configuration for colors and icons.
     $configJson = '{
        "colors": {
@@ -40,22 +40,23 @@
 
     $clientsBadgeData = getBadgeContent($dashboardData['clientsAddedPercentage'], $config);
     $briefsBadgeData  = getBadgeContent($dashboardData['briefsAddedPercentage'], $config);
-@endphp
+?>
 
 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
   <!-- Customers Metric -->
   <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
     <!-- Icon container for Customers -->
     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800">
-      {!! $config['icons']['customers'] !!}
+      <?php echo $config['icons']['customers']; ?>
+
     </div>
     <div class="mt-5 flex items-end justify-between">
       <div>
         <span class="text-sm text-gray-500 dark:text-gray-400">Customers</span>
-        <h4 class="mt-2 text-title-sm font-bold text-gray-800 dark:text-white/90">{{ $dashboardData['totalClients'] }}</h4>
+        <h4 class="mt-2 text-title-sm font-bold text-gray-800 dark:text-white/90"><?php echo e($dashboardData['totalClients']); ?></h4>
       </div>
-      <span class="flex items-center gap-1 rounded-full py-0.5 pl-2 pr-2.5 text-sm font-medium {!! $clientsBadgeData['classes'] !!}">
-        {!! $clientsBadgeData['svg'] !!} {{ $dashboardData['clientsAddedPercentage'] }}%
+      <span class="flex items-center gap-1 rounded-full py-0.5 pl-2 pr-2.5 text-sm font-medium <?php echo $clientsBadgeData['classes']; ?>">
+        <?php echo $clientsBadgeData['svg']; ?> <?php echo e($dashboardData['clientsAddedPercentage']); ?>%
       </span>
     </div>
   </div>
@@ -64,16 +65,18 @@
   <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
     <!-- Icon container for Orders -->
     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800">
-      {!! $config['icons']['orders'] !!}
+      <?php echo $config['icons']['orders']; ?>
+
     </div>
     <div class="mt-5 flex items-end justify-between">
       <div>
         <span class="text-sm text-gray-500 dark:text-gray-400">Orders</span>
-        <h4 class="mt-2 text-title-sm font-bold text-gray-800 dark:text-white/90">{{ $dashboardData['totalBriefs'] }}</h4>
+        <h4 class="mt-2 text-title-sm font-bold text-gray-800 dark:text-white/90"><?php echo e($dashboardData['totalBriefs']); ?></h4>
       </div>
-      <span class="flex items-center gap-1 rounded-full py-0.5 pl-2 pr-2.5 text-sm font-medium {!! $briefsBadgeData['classes'] !!}">
-        {!! $briefsBadgeData['svg'] !!} {{ $dashboardData['briefsAddedPercentage'] }}%
+      <span class="flex items-center gap-1 rounded-full py-0.5 pl-2 pr-2.5 text-sm font-medium <?php echo $briefsBadgeData['classes']; ?>">
+        <?php echo $briefsBadgeData['svg']; ?> <?php echo e($dashboardData['briefsAddedPercentage']); ?>%
       </span>
     </div>
   </div>
 </div>
+<?php /**PATH C:\briefy\resources\views/partials/metric-group/metric-group-01.blade.php ENDPATH**/ ?>

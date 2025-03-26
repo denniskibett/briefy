@@ -37,3 +37,4 @@
     </ol>
   </nav>
 </div>
+<?php /**PATH C:\briefy\resources\views/partials/breadcrumb.blade.php ENDPATH**/ ?>
